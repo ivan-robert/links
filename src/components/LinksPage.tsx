@@ -1,20 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { FaYoutube, FaInstagram,  } from 'react-icons/fa';
-import { ArrowLeft, Mail } from 'lucide-react';
+import { FaYoutube, FaInstagram } from 'react-icons/fa';
+import { ArrowLeft, Mail, Car } from 'lucide-react';
 import { SiX } from 'react-icons/si';
-
 
 const LinksPage: React.FC = () => {
   const navigate = useNavigate();
-  // Configuration facile à modifier
+
   const links = [
     {
-      name: "YouTube",
-      subtitle: "Vidéos et défis axés sur l'entrepreneuriat",
-      url: "https://www.youtube.com/@ivanos.mp4",
-      icon: FaYoutube,
-      color: "from-red-500 to-red-600"
+      name: "DriveFluent",
+      subtitle: "Ma dernière application",
+      url: "https://drivefluent.com",
+      icon: Car,
+      color: "from-orange-500 to-orange-600"
     },
     {
       name: "Instagram",
@@ -23,18 +22,17 @@ const LinksPage: React.FC = () => {
       icon: FaInstagram,
       color: "from-pink-500 to-purple-600"
     },
-
-    // {
-    //   name: "LinkedIn",
-    //   subtitle: "Mon profil professionnel",
-    //   url: "https://linkedin.com/in/username",
-    //   icon: FaLinkedin,
-    //   color: "from-blue-600 to-blue-700"
-    // },
+    {
+      name: "YouTube",
+      subtitle: "Vidéos et défis axés sur l'entrepreneuriat",
+      url: "https://www.youtube.com/@ivanos.mp4",
+      icon: FaYoutube,
+      color: "from-red-500 to-red-600"
+    },
     {
       name: "X",
       subtitle: "Shower thoughts et actus",
-      url: "https://twitter.com/@Discipline_pure",
+      url: "https://x.com/@Discipline_pure",
       icon: SiX,
       color: "from-sky-400 to-sky-500"
     },
@@ -54,9 +52,6 @@ const LinksPage: React.FC = () => {
     }
   ];
 
-  const handleLinkClick = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -68,11 +63,14 @@ const LinksPage: React.FC = () => {
 
         {/* Liste des liens */}
         <div className="space-y-4">
+       
           {links.map((link, index) => (
-            <button
+            <a
               key={index}
-              onClick={() => handleLinkClick(link.url)}
-              className="w-full bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 group"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 group block"
             >
               <div className="flex items-center space-x-4">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${link.color} flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-200`}>
@@ -90,7 +88,7 @@ const LinksPage: React.FC = () => {
                   <ArrowLeft className="w-4 h-4 rotate-180" />
                 </div>
               </div>
-            </button>
+            </a>
           ))}
         </div>
 
