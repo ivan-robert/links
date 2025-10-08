@@ -1,53 +1,52 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { FaYoutube, FaInstagram } from 'react-icons/fa';
-import { ArrowLeft, Mail, Car } from 'lucide-react';
-import { SiX } from 'react-icons/si';
+import { ArrowLeft, Mail } from 'lucide-react';
 
 const LinksPage: React.FC = () => {
   const navigate = useNavigate();
 
   const links = [
-    {
-      name: "DriveFluent",
-      subtitle: "Ma dernière application",
-      url: "https://drivefluent.com",
-      icon: Car,
-      color: "from-orange-500 to-orange-600"
-    },
+      {
+        name: "JapaneseReader",
+        subtitle: "Assistant de lecture pour le japonais",
+        url: "https://apps.apple.com/fr/app/japanesereader-book-reader/id6753658844",
+        icon: { type: 'image', src: '/icon-full.png' },
+        color: "from-orange-500 to-orange-600"
+      },
     {
       name: "Instagram",
-      subtitle: "Contenu entrepreneuriat, je poste tous les jours",
+      subtitle: "Je poste tous les jours",
       url: "https://www.instagram.com/ivanos.mp4/",
-      icon: FaInstagram,
+      icon: {type: 'icon', src: FaInstagram},
       color: "from-pink-500 to-purple-600"
     },
     {
       name: "YouTube",
-      subtitle: "Vidéos et défis axés sur l'entrepreneuriat",
+      subtitle: "Journal de bord entrepreneurial",
       url: "https://www.youtube.com/@ivanos.mp4",
-      icon: FaYoutube,
+      icon: {type: 'icon', src: FaYoutube},
       color: "from-red-500 to-red-600"
     },
-    {
-      name: "X",
-      subtitle: "Shower thoughts et actus",
-      url: "https://x.com/@Discipline_pure",
-      icon: SiX,
-      color: "from-sky-400 to-sky-500"
-    },
+    // {
+    //   name: "X",
+    //   subtitle: "Shower thoughts et actus",
+    //   url: "https://x.com/@Discipline_pure",
+    //   icon: SiX,
+    //   color: "from-sky-400 to-sky-500"
+    // },
     {
       name: "Compte photo",
       subtitle: "Contenu sur la photographie",
       url: "https://instagram.com/ivan.des.photos/",
-      icon: FaInstagram,
+      icon: {type: 'icon', src: FaInstagram},
       color: "from-pink-500 to-purple-600"
     },
     {
       name: "Contact",
-      subtitle: "Écrivez-moi un message",
+      subtitle: "Pour collaborer",
       url: "mailto:ivan@betterwithpat.com",
-      icon: Mail,
+      icon: {type: 'icon', src: Mail},
       color: "from-gray-600 to-gray-700"
     }
   ];
@@ -58,7 +57,13 @@ const LinksPage: React.FC = () => {
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">Mes Liens</h1>
+          <img 
+            src="/wtf.png" 
+            alt="Photo de profil" 
+            className="w-24 h-24 rounded-full object-cover mx-auto mb-4 shadow-lg"
+          />
+          <h1 className="text-3xl font-bold text-gray-900">Ivanos</h1>
+          <p className="text-lg text-gray-600 mt-2">Créateur et entrepreneur</p>
         </div>
 
         {/* Liste des liens */}
@@ -74,7 +79,16 @@ const LinksPage: React.FC = () => {
             >
               <div className="flex items-center space-x-4">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${link.color} flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-200`}>
-                  <link.icon className="w-6 h-6 text-white" />
+                  {link.icon.type === 'image' ? (
+                    <img 
+                      src={link.icon.src as string} 
+                      alt={link.name} 
+                      className="w-full h-full object-contain rounded-xl"
+                    />
+                  ) : (
+
+                    <link.icon.src className="w-6 h-6 text-white" />
+                  )}
                 </div>
                 <div className="flex-1 text-left">
                   <h3 className="font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200">

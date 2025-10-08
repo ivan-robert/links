@@ -7,22 +7,22 @@ const HomePage: React.FC = () => {
   // Configuration facile à modifier
   const profile = {
     name: "Ivan",
-    description: "Développeur, entrepreneur passionné de création.",
+    description: "Développeur, entrepreneur et créateur de contenu.",
     interests: [
       { 
-        icon: Code, 
+        icon: Camera, 
         text: "Créateur de contenu",
-        subtitle: "1500 followers"
+        subtitle: "1650 followers"
       },
       { 
-        icon: Camera, 
-        text: "Passionné de tech",
+        icon: Code, 
+        text: "Tech enthusiast",
         subtitle: "Création d'applications et IA"
       },
       { 
         icon: Dumbbell, 
-        text: "Sportif",
-        subtitle: "Si je ne suis pas en ligne, je suis en train de détruire mon corps"
+        text: "Grass toucher",
+        subtitle: "Pour combattre toutes ces heures passées assis"
       }
     ]
   };
