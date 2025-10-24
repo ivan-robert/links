@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
       { 
         icon: Camera, 
         text: "Créateur de contenu",
-        subtitle: "1650 followers"
+        subtitle: "1750 followers"
       },
       { 
         icon: Code, 

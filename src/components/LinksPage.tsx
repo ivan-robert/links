@@ -7,11 +7,18 @@ const LinksPage: React.FC = () => {
   const navigate = useNavigate();
 
   const links = [
+    {
+      name: "Sort prochainement",
+      subtitle: "Rejoins dès maintenant la waitlist !",
+      url: "https://betterwithpat.com/try-it/",
+      icon: { type: 'image', src: '/logo-bwp.png' },
+      color: "from-orange-500 to-orange-600"
+    },
       {
-        name: "JapaneseReader",
-        subtitle: "Assistant de lecture pour le japonais",
-        url: "https://apps.apple.com/fr/app/japanesereader-book-reader/id6753658844",
-        icon: { type: 'image', src: '/icon-full.png' },
+        name: "Mon dernier projet",
+        subtitle: "Apprendre le japonais en conduisant, avec des audios sur mesure",
+        url: "https://drivefluent.com",
+        icon: { type: 'image', src: '/logo-df.png' },
         color: "from-orange-500 to-orange-600"
       },
     {
